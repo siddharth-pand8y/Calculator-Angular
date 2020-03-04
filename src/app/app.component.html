@@ -51,7 +51,13 @@
     <button id="converterButton" routerLink="converter">
       Converter
     </button>
-    <div id="selectedTab"></div>
+    <div
+      id="selectedTab"
+      [ngClass]="{
+        converterSelected: currentTab === 'Converter',
+        calculatorSelected: currentTab !== 'Converter'
+      }"
+    ></div>
   </nav>
   <router-outlet></router-outlet>
 </main>
