@@ -1,1 +1,40 @@
-<p>calculator works!</p>
+<section id="CalculatorSection">
+    <div class="screen">
+      <div class="operand">
+        <input id="screenDisplayInput" />
+        <button type="button" onclick="Delete()">
+          <img src="assets/delete.svg" alt="">
+        </button>
+      </div>
+      <output id="output"> </output>
+    </div>
+    <div id="buttonPad">
+      <button id="clearButton" onclick="reset()">C</button>
+      <div id="operandRow">
+        <button onclick="brackets()">()</button>
+        <button onclick="handleOperatorPress('%')">%</button>
+        <button onclick="handleOperatorPress('/')">&#247;</button>
+      </div>
+      <div id="operandColumn">
+        <button onclick="handleOperatorPress('*')">X</button>
+        <button onclick="handleOperatorPress('+')">+</button>
+        <button onclick="handleOperatorPress('-')">-</button>
+      </div>
+      <button id="equalButton" onclick="calculate()">=</button>
+      <div id="numberPad">
+        <button onclick="handleNumpadPress(1)">1</button>
+        <button onclick="handleNumpadPress(2)">2</button>
+        <button onclick="handleNumpadPress(3)">3</button>
+        <button onclick="handleNumpadPress(4)">4</button>
+        <button onclick="handleNumpadPress(5)">5</button>
+        <button onclick="handleNumpadPress(6)">6</button>
+        <button onclick="handleNumpadPress(7)">7</button>
+        <button onclick="handleNumpadPress(8)">8</button>
+        <button onclick="handleNumpadPress(9)">9</button>
+        <button onclick="makeValueNegative()">+/-</button>
+        <button onclick="handleNumpadPress(0)">0</button>
+        <button onclick="handleNumpadPress('.')">.</button>
+      </div>
+      <div id="backgroundHighlight"></div>
+    </div>
+  </section>
