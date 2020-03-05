@@ -1,1 +1,62 @@
-<p>converter works!</p>
+<section id="ConvertorSection">
+    <nav id="unitSelection">
+      <button>Area</button>
+      <!-- <button>Length</button>
+      <button>Temperature</button>
+      <button>Volume</button>
+      <button>Mass</button>
+      <button>Data</button>
+      <button>Speed</button>
+      <button>Time</button> -->
+    </nav>
+
+    <div id="firstUnitScreen">
+      <select name="firstUnitSelect" id="firstUnitSelect">
+        <option value="ac">Acres(ac)</option>
+        <option value="a">Ares(a)</option>
+        <option value="ha">Hectares(ha)</option>
+        <option value="cm2">Square Centimetres(cm<sup>2</sup>)</option>
+        <option value="ft2">Square feet(ft<sup>2</sup>)</option>
+        <option value="in2">Square Inches(in<sup>2</sup>)</option>
+        <option value="m2">Square metres(m<sup>2</sup>)</option>
+      </select>
+      <input type="tel" />
+      <button type="button" onclick="Delete()">
+        <img src="./assets/delete.svg" alt="" />
+      </button>
+    </div>
+    <div id="SecondUnitScreen">
+      <select name="secondUnitSelect" id="secondUnitSelect">
+        <option value="ac">Acres(ac)</option>
+        <option value="a">Ares(a)</option>
+        <option value="ha">Hectares(ha)</option>
+        <option value="cm2">Square Centimetres(cm<sup>2</sup>)</option>
+        <option value="ft2">Square feet(ft<sup>2</sup>)</option>
+        <option value="in2">Square Inches(in<sup>2</sup>)</option>
+        <option value="m2">Square metres(m<sup>2</sup>)</option>
+      </select>
+      <input type="tel" />
+      <button type="button" onclick="Delete()">
+        <img src="./assets/delete.svg" alt="" />
+      </button>
+    </div>
+    <div id="converterButtonPad">
+      <button id="clearButton" onclick="reset()">C</button>
+      <button id="equalButton" onclick="calculate()">=</button>
+      <div id="numberPad">
+        <button onclick="handleNumpadPress(1)">1</button>
+        <button onclick="handleNumpadPress(2)">2</button>
+        <button onclick="handleNumpadPress(3)">3</button>
+        <button onclick="handleNumpadPress(4)">4</button>
+        <button onclick="handleNumpadPress(5)">5</button>
+        <button onclick="handleNumpadPress(6)">6</button>
+        <button onclick="handleNumpadPress(7)">7</button>
+        <button onclick="handleNumpadPress(8)">8</button>
+        <button onclick="handleNumpadPress(9)">9</button>
+        <button onclick="makeValueNegative()">+/-</button>
+        <button onclick="handleNumpadPress(0)">0</button>
+        <button onclick="handleNumpadPress('.')">.</button>
+      </div>
+      <div id="backgroundHighlight"></div>
+    </div>
+  </section>
