@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,12 +10,20 @@ export class AppComponent {
   currentTab = '';
   constructor(private router: Router) {
     this.router.navigateByUrl('/calculator');
-    console.log(this.router.url);
-    this.currentTab =
-      this.router.url === '/converter'
-        ? 'Converter'
-        : this.router.url === '/calculator'
-        ? 'Calculator'
-        : 'this.router.url';
+    this.router.events.subscribe(routerEvent => {
+      if (routerEvent instanceof NavigationEnd) {
+        switch (routerEvent.urlAfterRedirects) {
+          case '/converter':
+            this.currentTab = 'Converter';
+            break;
+          case '/calculator':
+            this.currentTab = 'Calculator';
+            break;
+          default:
+            this.currentTab = '';
+            break;
+        }
+      }
+    });
   }
 }

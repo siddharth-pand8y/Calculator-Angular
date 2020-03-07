@@ -45,10 +45,19 @@
       id="calculatorButton"
       class="selectedAction"
       routerLink="calculator"
+      [ngClass]="{
+        converterSelectedButton1: currentTab === 'Converter'
+      }"
     >
       Calculator
     </button>
-    <button id="converterButton" routerLink="converter">
+    <button
+      id="converterButton"
+      routerLink="converter"
+      [ngClass]="{
+        converterSelectedButton2: currentTab === 'Converter'
+      }"
+    >
       Converter
     </button>
     <div

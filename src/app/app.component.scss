@@ -1,6 +1,13 @@
 .converterSelected {
-    transform : translate(-100vw, 0);
+    transform: translate(calc(45vw + 4px), 0);
+    box-shadow: -4px 0px 4px #00000017 !important;
 }
 .calculatorSelected {
     transform : translate(0, 0);
+}
+.converterSelectedButton2 {
+    color: #ffffff !important;
+}
+.converterSelectedButton1 {
+    color: #8fd3f4 !important;
 }
