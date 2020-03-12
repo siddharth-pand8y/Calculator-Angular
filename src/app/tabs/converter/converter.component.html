@@ -10,35 +10,35 @@
       <button>Time</button> -->
     <ul>
       <li>
-        <input type="radio" id="area" name="conversionType" value="Area" />
+        <input type="radio" id="area" name="conversionType" [formControl]="conversionType" value="Area" />
         <label for="area">Area</label>
       </li>
       <li>
-        <input type="radio" id="volume" name="conversionType" value="Volume" />
+        <input type="radio" id="volume" name="conversionType" [formControl]="conversionType" value="Volume" />
         <label for="volume">Volume</label>
       </li>
       <li>
-        <input type="radio" id="length" name="conversionType" value="Length" />
+        <input type="radio" id="length" name="conversionType" [formControl]="conversionType" value="Length" />
         <label for="length">Length</label>
       </li>
       <li>
-        <input type="radio" id="temperature" name="conversionType" value="Temperature" />
+        <input type="radio" id="temperature" name="conversionType" [formControl]="conversionType" value="Temperature" />
         <label for="temperature">Temperature</label>
       </li>
       <li>
-        <input type="radio" id="mass" name="conversionType" value="Mass" />
+        <input type="radio" id="mass" name="conversionType" [formControl]="conversionType" value="Mass" />
         <label for="mass">Mass</label>
       </li>
       <li>
-        <input type="radio" id="data" name="conversionType" value="Data" />
+        <input type="radio" id="data" name="conversionType" [formControl]="conversionType" value="Data" />
         <label for="data">Data</label>
       </li>
       <li>
-        <input type="radio" id="speed" name="conversionType" value="Speed" />
+        <input type="radio" id="speed" name="conversionType" [formControl]="conversionType" value="Speed" />
         <label for="speed">Speed</label>
       </li>
       <li>
-        <input type="radio" id="time" name="conversionType" value="Time" />
+        <input type="radio" id="time" name="conversionType" [formControl]="conversionType" value="Time" />
         <label for="time">Time</label>
       </li>
     </ul>
@@ -46,13 +46,14 @@
 
   <div id="firstUnitScreen">
     <select name="firstUnitSelect" id="firstUnitSelect">
-      <option value="ac">Acres(ac)</option>
+      <!-- <option value="ac">Acres(ac)</option>
       <option value="a">Ares(a)</option>
       <option value="ha">Hectares(ha)</option>
       <option value="cm2">Square Centimetres(cm<sup>2</sup>)</option>
       <option value="ft2">Square feet(ft<sup>2</sup>)</option>
       <option value="in2">Square Inches(in<sup>2</sup>)</option>
-      <option value="m2">Square metres(m<sup>2</sup>)</option>
+      <option value="m2">Square metres(m<sup>2</sup>)</option> -->
+      <option *ngFor="let unit of units[0]" >{{unit.name}}</option>
     </select>
     <input type="tel" />
     <button type="button" onclick="Delete()">

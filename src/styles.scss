@@ -1,3 +1,7 @@
+:root {
+  --color-primary: #8fd3f4;
+}
+
 *:focus {
     outline: 0 !important;
   }
@@ -38,7 +42,7 @@
   }
   
   #historySpan {
-    color: #8fd3f4;
+    color: var(--color-primary);
     font-family: 'futura-pt-condensed', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -60,7 +64,7 @@
     background: #ffffff00;
     border: none;
     outline: none;
-    color: #8fd3f4;
+    color: var(--color-primary);
     font-family: futura-pt-condensed, sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -73,7 +77,7 @@
     grid-row: 1/2;
     width: 50%;
     height: 100%;
-    background-color: #8fd3f4;
+    background-color: var(--color-primary);
     z-index: 1;
     border-radius: 4px;
     box-shadow: 4px 0 4px #00000017;
@@ -259,7 +263,7 @@
     border: 2px solid #ffffff50;
     box-shadow: 4px 4px 4px 4px #00000017, -4px -4px 4px 4px #ffffff,
       inset 2px 2px 2px 2px #ffffff50;
-    color: #8fd3f4;
+    color: var(--color-primary);
     border-radius: 5px;
   }
   
