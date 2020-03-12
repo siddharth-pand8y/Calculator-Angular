@@ -53,7 +53,7 @@
       <option value="ft2">Square feet(ft<sup>2</sup>)</option>
       <option value="in2">Square Inches(in<sup>2</sup>)</option>
       <option value="m2">Square metres(m<sup>2</sup>)</option> -->
-      <option *ngFor="let unit of units[0]" >{{unit.name}}</option>
+      <option *ngFor="let unit of units[this.conversionType.value.toLowerCase()]" >{{unit.name}}</option>
     </select>
     <input type="tel" />
     <button type="button" onclick="Delete()">
@@ -62,13 +62,14 @@
   </div>
   <div id="SecondUnitScreen">
     <select name="secondUnitSelect" id="secondUnitSelect">
-      <option value="ac">Acres(ac)</option>
+      <!-- <option value="ac">Acres(ac)</option>
       <option value="a">Ares(a)</option>
       <option value="ha">Hectares(ha)</option>
       <option value="cm2">Square Centimetres(cm<sup>2</sup>)</option>
       <option value="ft2">Square feet(ft<sup>2</sup>)</option>
       <option value="in2">Square Inches(in<sup>2</sup>)</option>
-      <option value="m2">Square metres(m<sup>2</sup>)</option>
+      <option value="m2">Square metres(m<sup>2</sup>)</option> -->
+      <option *ngFor="let unit of units[this.conversionType.value.toLowerCase()]" >{{unit.name}}</option>
     </select>
     <input type="tel" />
     <button type="button" onclick="Delete()">

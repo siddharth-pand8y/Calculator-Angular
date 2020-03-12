@@ -31,24 +31,36 @@ export class ConverterComponent implements OnInit {
         base_unit: 1
       }
     ],
-    Length: [
+    volume: [
+      {
+        name: 'Cubic Metre',
+        symbol: 'm\u00B3',
+        base_unit: 1
+      },
+      {
+        name: 'Cubic Centimetre',
+        symbol: 'cm\u00B3',
+        base_unit: 0.000001
+      }
+    ],
+    length: [
       {
         name: 'Kilometre',
         symbol: 'km',
         base_unit: 1000
       },
       {
-        name: 'centimetre',
+        name: 'Centimetre',
         symbol: 'cm',
         base_unit: 0.01
       },
       {
-        name: 'millimetre',
+        name: 'Millimetre',
         symbol: 'mm',
         base_unit: 0.000001
       },
       {
-        name: 'nanometre',
+        name: 'Nanometre',
         symbol: 'nm',
         base_unit: 0.000000001
       },
@@ -56,7 +68,7 @@ export class ConverterComponent implements OnInit {
         name: 'Metre',
         symbol: 'm',
         base_unit: 1
-      },
+      }
     ]
   };
 
