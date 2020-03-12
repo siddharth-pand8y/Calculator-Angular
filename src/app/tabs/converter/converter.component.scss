@@ -12,7 +12,6 @@
 
     li {
       padding: 0 10px 0 5px;
-
       input {
         display: none;
       }
@@ -20,6 +19,13 @@
         font-family: 'futura-pt';
         color: var(--color-primary);
         font-weight: 700;
+        transition: all 0.3s ease-in;
+      }
+      input:checked + label {
+        background: var(--color-primary);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
       }
     }
   }

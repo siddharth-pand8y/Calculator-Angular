@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
@@ -7,6 +7,15 @@ import { FormControl } from '@angular/forms';
 })
 export class ConverterComponent implements OnInit {
   conversionType = new FormControl('Area');
+
+  convertInputsForm = this.fb.group({
+    input1: [null, Validators.required],
+    input2: [null, Validators.required],
+    firstSelect: ['Square Centimetre'],
+    secondSelect: ['Hectare']
+  });
+
+  firstInputActive = true;
 
   units = {
     area: [
@@ -72,10 +81,36 @@ export class ConverterComponent implements OnInit {
     ]
   };
 
-  constructor() {
-    this.conversionType.valueChanges.subscribe((value) => {
-      console.log(value);
+  constructor(private fb: FormBuilder) {
+    this.conversionType.valueChanges.subscribe(value => {
+      this.convertInputsForm.patchValue({
+        firstSelect: this.units[value.toLowerCase()][0].name,
+        secondSelect: this.units[value.toLowerCase()][1].name
+      });
     });
+  }
+
+  performConversion() {
+    const base1 = this.units[this.conversionType.value.toLowerCase()].filter(
+      a => a.name === this.convertInputsForm.get('firstSelect').value
+    )[0].base_unit;
+    const base2 = this.units[this.conversionType.value.toLowerCase()].filter(
+      a => a.name === this.convertInputsForm.get('secondSelect').value
+    )[0].base_unit;
+
+    if (this.firstInputActive === true) {
+      const value = this.convertInputsForm.get('input1').value;
+
+      this.convertInputsForm.patchValue({
+        input2: (value * base1) / base2
+      });
+    } else {
+      const value = this.convertInputsForm.get('input2').value;
+
+      this.convertInputsForm.patchValue({
+        input1: (value * base2) / base1
+      });
+    }
   }
 
   ngOnInit(): void {}
